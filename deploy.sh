@@ -4,8 +4,12 @@ TOMCAT=/opt/tomcat
 
 echo -e "backing up existing deployment\n"
 if [ -d "$TOMCAT/webapps/java-hello-world" ]; then
-	mkdir backup
-	mv $TOMCAT/webapps/java-hello-world* backup
+	backup_dir=backup_$(date +%m-%d-%Y)
+	if [ -d $backup_dir ]; then
+		rm -rf $backup_dir
+	fi
+	mkdir $backup_dir
+	mv $TOMCAT/webapps/java-hello-world* $backup_dir
 fi
 echo -e "stop tomcat service\n"
 sh /opt/tomcat/bin/shutdown.sh
