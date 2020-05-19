@@ -3,10 +3,10 @@
 ##################################################################################
 
 variable "aws_access_key" {
-  default = "AKIAJIIGDW2YQ7PPWG2Q"
+  default = "No key"
 }
 variable "aws_secret_key" {
-  default= "REsNs7qP0rKh8+RhTxHLY168xSJwAH6umVEsOroj"
+  default= "No key"
 }
 variable "private_key_path" {
 default = "/home/patcloud/north-virginia.pem"
