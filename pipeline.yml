@@ -9,6 +9,8 @@ tasks:
       cmd: zip -r scripting.zip target/
   - integration:
       cmd: mvn verify
+  - deploy: 
+      cmd: scp deploy.sh scripting.zip ec2-user@54.152.120.92/home/ec2-user; ssh ec2-user@54.152.120.92 "sudo sh /home/ec2-user/deploy.sh"
 
 
 #Pipeline execution order way to run my steps
@@ -19,6 +21,7 @@ pipelines:
       - build
       - integration
       - compress
+      - deploy
   - foo:
      - invalid
       
