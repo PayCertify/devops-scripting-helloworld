@@ -1,0 +1,8 @@
+This summarizes the given assignment which is the configuration of the infrastructure and the development of a ci tool to execute the pipelines. 
+In the terraform.tf file, I am configuring and provisioning the infrastructure 
+In the ci-tool.py file, I am defining the execution of the builds base on the stage in the arguments. 
+In the deploy.sh file, I am deploying the java app to the tomcat server. 
+And there is also a change in the pipeline.yml file where I have added a deployment task and subtasks.
+
+Overall, when my terraform code is executed, the infrastructure is created and installation of both tomcat and java is done. 
+The ci-tool execution is done base on the provided value in the arguments. 
